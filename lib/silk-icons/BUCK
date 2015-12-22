@@ -1,0 +1,9 @@
+include_defs('//bucklets/maven_jar.bucklet')
+
+define_license('silk-icons')
+define_license('CC-BY3.0')
+
+java_library(
+  name = 'silk_icons_lib',
+  visibility = ['PUBLIC'],
+)
