@@ -1,0 +1,20 @@
+.emoticons-config-screen {
+  width: 100%;
+  border-spacing: 0px 5px;
+}
+
+.emoticons-label-panel {
+  margin-bottom: 10px;
+}
+
+.emoticons-label-panel td {
+  vertical-align: middle !important;
+}
+
+.emoticons-label-panel td div {
+  margin-right: 5px;
+}
+
+.emoticons-save-button {
+  margin-bottom: 10px;
+}
