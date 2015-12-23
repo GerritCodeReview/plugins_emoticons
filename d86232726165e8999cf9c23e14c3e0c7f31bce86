@@ -1,4 +1,341 @@
 {
   "pushCert": "certificate version 0.1\npusher A0D0EF51 1450887255 +0100\nnonce ALmjDBXFY4m9ltH5lUdpO5vPtwe6pZOFM3atBxo1/ZRcJoJ5a9vSt238n+UHBRarW0ip95QvGjQv\n\n0000000000000000000000000000000000000000 d86232726165e8999cf9c23e14c3e0c7f31bce86 refs/for/master\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQEcBAABAgAGBQJWeshXAAoJEFG1/Zeg0O9ROaYH/2GTN/j6LhnByHjKrwMzx6zj\n3iTU4CAIs+bO9c6/iIudpRW9mnm9fwLt27FrDUIa35TSAXNn91rp/BR8XqSbWTwp\nGHIOR9P7jmUaYXORSelUWqBcO3luMX5L0PUFuSmlVQJu6qNqBi0GNyTar44uYLlC\nyuljitZ1O8AjN70SqrbulNB8DTaGLV0Ahk2281njBmJX8C3uUc7KGpyEXjTsNjiV\nK4mvZbZDWUDQwwzGmCLFwDy2sUxhEpf4CgfQpFqjPs72LGcL7X9MDmfI+4l2egci\noFqHEMySLTEQ+dBwFuo3QbNup54PdSYim+houTh0xlJxO1oMVocdnIIabqaxnaY\u003d\n\u003db2SC\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "eabb2b9e_aa802f67",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Please add here a comment that this plugins depends on this change in core: [1]. I tried to verify it for hours, until i realized that: [1] was missing in my tree.\n\n* [1] https://gerrit-review.googlesource.com/73528",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6afc9b2b_debe85ec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "When comments are not expanded, emoticons are not rendered: [1]. When I expand the comment, it works as expected: [2]. Is this a known limitation? Mention it in the commit message or plugin documentation?\n\n* [1] http://imgur.com/4wroqVE\n* [2] http://imgur.com/JNseFe8",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eabb2b9e_ea862785",
+        "filename": "BUCK",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "This cannot work in tree mode, the error is as expected:\n\n  $ buck targets --json plugins/emoticons:classpath\n  Cell$MissingBuildFileException: No build file at lib/silk_icons/BUCK when resolving target //lib/silk_icons:silk_icons.\n\nNote, that you need this fix to be in tree to reproduce this: [1]. But why would you want anyway to add a license to eclipse project file? I think you could add a define and use something like:\n\n  //plugins/emoticons/lib/silk_icons:silk_icons\n\nin tree mode. But I don\u0027t think it\u0027s needed.\n\n* [1] https://gerrit-review.googlesource.com/73548",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6afc9b2b_1ead0dc0",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/GetConfig.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "That why it can be null.",
+      "range": {
+        "startLine": 39,
+        "startChar": 6,
+        "endLine": 39,
+        "endChar": 32
+      },
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eabb2b9e_ca89e397",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/GetPreference.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Nit: every params on single line.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6afc9b2b_3ea8c9af",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/GetPreference.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Why not to annotate this class with:\n\n  @RequiresCapability(value \u003d GlobalCapability.ADMINISTRATE_SERVER,\n    scope \u003d CapabilityScope.CORE)\n\nlike you did in PutConfig.java?",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 5
+      },
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eabb2b9e_2a751f61",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/PutConfig.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Client irgnores it anyway, return just none()?",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eabb2b9e_6a7b1759",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/PutPreference.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Nit: every params on single line.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eabb2b9e_0a705b70",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/PutPreference.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Nit: long line.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eabb2b9e_4a765372",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/ConfigInfo.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Can\u0027t this be null?",
+      "range": {
+        "startLine": 20,
+        "startChar": 51,
+        "endLine": 20,
+        "endChar": 70
+      },
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6afc9b2b_1ed62d4a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "2015? Or is this existing file, that was copied/borrowed from some place?",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eabb2b9e_ea9f07d3",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Nit: Unneeded new line.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eabb2b9e_8aac4b0a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Remove all finals?",
+      "range": {
+        "startLine": 56,
+        "startChar": 23,
+        "endLine": 56,
+        "endChar": 28
+      },
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6afc9b2b_7eae51c1",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Nit: Unneeded new line.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6afc9b2b_feda616c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Nit: Unneeded new line.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6afc9b2b_9ee11d19",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Mention what default is?",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6afc9b2b_ded7a542",
+        "filename": "src/main/resources/static/emoticons.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Nit: trailing blanks. Here and below.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6afc9b2b_bee4d928",
+        "filename": "src/main/resources/static/emoticons.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-12-23T17:19:10Z",
+      "side": 1,
+      "message": "Nit: Untabify. here and below.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
 }
