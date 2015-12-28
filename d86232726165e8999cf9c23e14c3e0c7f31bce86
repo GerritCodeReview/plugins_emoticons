@@ -20,6 +20,24 @@
     },
     {
       "key": {
+        "uuid": "aaa4d3ba_302b08c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Sorry about this, it\u0027s already noted as comment on this change, but I can also add it to the commit message.\n\nDone",
+      "parentUuid": "eabb2b9e_aa802f67",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6afc9b2b_debe85ec",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -37,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "aaa213bd_009be68e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Yes, this is kind of intended. Collapsed comments show a one-line summary and I\u0027m not sure if we always want to do replacements in there. For emoticons it may make sense, but for other usages of the new extension point it may be not so good, e.g. for inlining images as the imagare plugin does or if this extension point is used to do Markdown formatting etc.\n\nAt least for now I would keep this limitation.\n\nI\u0027ve mentioned it in the commit message and the plugin documentation.\n\nDone",
+      "parentUuid": "6afc9b2b_debe85ec",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eabb2b9e_ea862785",
         "filename": "BUCK",
         "patchSetId": 5
@@ -48,6 +84,24 @@
       "writtenOn": "2015-12-23T17:19:10Z",
       "side": 1,
       "message": "This cannot work in tree mode, the error is as expected:\n\n  $ buck targets --json plugins/emoticons:classpath\n  Cell$MissingBuildFileException: No build file at lib/silk_icons/BUCK when resolving target //lib/silk_icons:silk_icons.\n\nNote, that you need this fix to be in tree to reproduce this: [1]. But why would you want anyway to add a license to eclipse project file? I think you could add a define and use something like:\n\n  //plugins/emoticons/lib/silk_icons:silk_icons\n\nin tree mode. But I don\u0027t think it\u0027s needed.\n\n* [1] https://gerrit-review.googlesource.com/73548",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aaa213bd_a0a9da9d",
+        "filename": "BUCK",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eabb2b9e_ea862785",
       "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -77,6 +131,30 @@
     },
     {
       "key": {
+        "uuid": "aaa4d3ba_d0339c30",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/GetConfig.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "As always we set the boolean field to null when it is false.",
+      "parentUuid": "6afc9b2b_1ead0dc0",
+      "range": {
+        "startLine": 39,
+        "startChar": 6,
+        "endLine": 39,
+        "endChar": 32
+      },
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eabb2b9e_ca89e397",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/GetPreference.java",
         "patchSetId": 5
@@ -88,6 +166,24 @@
       "writtenOn": "2015-12-23T17:19:10Z",
       "side": 1,
       "message": "Nit: every params on single line.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aaa4d3ba_50208cd7",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/GetPreference.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eabb2b9e_ca89e397",
       "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "aaa4d3ba_702590e6",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/GetPreference.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "This annotation does only allow administrators to use the REST endpoint, but this is not what we want here.\n\n* GetConfig/PutConfig: global configuration - anyone can read it, only admins can edit it\n* GetPreference/PutPreference: user-specific configuration - only that user and admin can read/edit it\n\nUsing this annotation here would mean that the user cannot read his own preference.",
+      "parentUuid": "6afc9b2b_3ea8c9af",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 5
+      },
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eabb2b9e_2a751f61",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/PutConfig.java",
         "patchSetId": 5
@@ -128,6 +248,24 @@
       "writtenOn": "2015-12-23T17:19:10Z",
       "side": 1,
       "message": "Client irgnores it anyway, return just none()?",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aaa213bd_80aff69e",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/PutConfig.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eabb2b9e_2a751f61",
       "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -151,6 +289,24 @@
     },
     {
       "key": {
+        "uuid": "aaa4d3ba_90391417",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/PutPreference.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eabb2b9e_6a7b1759",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eabb2b9e_0a705b70",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/PutPreference.java",
         "patchSetId": 5
@@ -168,6 +324,24 @@
     },
     {
       "key": {
+        "uuid": "aaa4d3ba_b0361822",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/PutPreference.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eabb2b9e_0a705b70",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eabb2b9e_4a765372",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/ConfigInfo.java",
         "patchSetId": 5
@@ -179,6 +353,30 @@
       "writtenOn": "2015-12-23T17:19:10Z",
       "side": 1,
       "message": "Can\u0027t this be null?",
+      "range": {
+        "startLine": 20,
+        "startChar": 51,
+        "endLine": 20,
+        "endChar": 70
+      },
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aaa213bd_60acf2a9",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/ConfigInfo.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Yes, as always we set the boolean field to null when it is false.",
+      "parentUuid": "eabb2b9e_4a765372",
       "range": {
         "startLine": 20,
         "startChar": 51,
@@ -214,6 +412,30 @@
     },
     {
       "key": {
+        "uuid": "aaa4d3ba_f030a026",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Yes, copied... :(\n\nWe should make it available in gerrit-gwtui-common.",
+      "parentUuid": "6afc9b2b_1ed62d4a",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eabb2b9e_ea9f07d3",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
         "patchSetId": 5
@@ -225,6 +447,24 @@
       "writtenOn": "2015-12-23T17:19:10Z",
       "side": 1,
       "message": "Nit: Unneeded new line.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aaa213bd_40b9eee9",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eabb2b9e_ea9f07d3",
       "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -254,6 +494,30 @@
     },
     {
       "key": {
+        "uuid": "aaa4d3ba_108d241f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eabb2b9e_8aac4b0a",
+      "range": {
+        "startLine": 56,
+        "startChar": 23,
+        "endLine": 56,
+        "endChar": 28
+      },
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6afc9b2b_7eae51c1",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
         "patchSetId": 5
@@ -265,6 +529,24 @@
       "writtenOn": "2015-12-23T17:19:10Z",
       "side": 1,
       "message": "Nit: Unneeded new line.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aaa4d3ba_30922840",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6afc9b2b_7eae51c1",
       "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -288,6 +570,24 @@
     },
     {
       "key": {
+        "uuid": "aaa213bd_20b6eaf9",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/client/OnEditEnabler.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6afc9b2b_feda616c",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6afc9b2b_9ee11d19",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 5
@@ -299,6 +599,24 @@
       "writtenOn": "2015-12-23T17:19:10Z",
       "side": 1,
       "message": "Mention what default is?",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aaa213bd_00c2c65e",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6afc9b2b_9ee11d19",
       "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -322,6 +640,24 @@
     },
     {
       "key": {
+        "uuid": "aaa213bd_e0c6c270",
+        "filename": "src/main/resources/static/emoticons.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6afc9b2b_ded7a542",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6afc9b2b_bee4d928",
         "filename": "src/main/resources/static/emoticons.js",
         "patchSetId": 5
@@ -333,6 +669,24 @@
       "writtenOn": "2015-12-23T17:19:10Z",
       "side": 1,
       "message": "Nit: Untabify. here and below.",
+      "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aaa213bd_c0bbbede",
+        "filename": "src/main/resources/static/emoticons.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2015-12-28T09:13:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6afc9b2b_bee4d928",
       "revId": "d86232726165e8999cf9c23e14c3e0c7f31bce86",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
