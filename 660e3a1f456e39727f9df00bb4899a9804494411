@@ -17,6 +17,23 @@
       "revId": "660e3a1f456e39727f9df00bb4899a9804494411",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aaa213bd_4008ce40",
+        "filename": "lib/silk-icons/BUCK",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2016-01-04T09:21:29Z",
+      "side": 1,
+      "message": "Is this library empty (no sources, recourses and dependencies) and can be removed? Or have you missed to add custom license? I\u0027m also not sure, what custom license actually does in plugin context.",
+      "revId": "660e3a1f456e39727f9df00bb4899a9804494411",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
