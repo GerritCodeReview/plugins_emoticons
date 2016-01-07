@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "aab8533e_70fed084",
+        "filename": "lib/silk-icons/BUCK",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2016-01-07T08:24:01Z",
+      "side": 1,
+      "message": "\u003e Is this library empty (no sources, recourses and dependencies) and\n \u003e can be removed?\n\nIt is empty (no source, no resources, no dependencies), but I have this BUCK file so that define_license above is executed.\n\n \u003e Or have you missed to add custom license?\n\nMaybe. How could I do this? The java_library rule doesn\u0027t accept a \u0027license\u0027 parameter.\n\n \u003e I\u0027m also not sure, what custom license actually does in  \n \u003e plugin context.\n\nI hope that is does the same as in Gerrit context.",
+      "parentUuid": "aaa213bd_4008ce40",
+      "revId": "660e3a1f456e39727f9df00bb4899a9804494411",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eaaecbf8_12014c4d",
+        "filename": "lib/silk-icons/BUCK",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2016-01-07T08:24:01Z",
+      "side": 1,
+      "message": "\u003e Is this library empty (no sources, recourses and dependencies) and\n \u003e can be removed?\n\nIt is empty (no source, no resources, no dependencies), but I have this BUCK file so that define_license above is executed.\n\n \u003e Or have you missed to add custom license?\n\nMaybe. How could I do this? The java_library rule doesn\u0027t accept a \u0027license\u0027 parameter.\n\n \u003e I\u0027m also not sure, what custom license actually does in  \n \u003e plugin context.\n\nI hope that is does the same as in Gerrit context.",
+      "parentUuid": "aaa213bd_4008ce40",
+      "revId": "660e3a1f456e39727f9df00bb4899a9804494411",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aaa213bd_2005ca26",
         "filename": "src/main/resources/static/emoticons.js",
         "patchSetId": 6
@@ -48,6 +84,30 @@
       "writtenOn": "2016-01-04T09:32:01Z",
       "side": 1,
       "message": "What is \"p\" and where it\u0027s documented?",
+      "range": {
+        "startLine": 65,
+        "startChar": 37,
+        "endLine": 65,
+        "endChar": 40
+      },
+      "revId": "660e3a1f456e39727f9df00bb4899a9804494411",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aaa4d3ba_304a285f",
+        "filename": "src/main/resources/static/emoticons.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2016-01-07T08:24:01Z",
+      "side": 1,
+      "message": "\u003e What is \"p\" and where it\u0027s documented?\n\n\u003cp\u003e is a paragraph in HTML [1]. Gerrit uses it to format the comment, but actually we don\u0027t need to know about this format here. Done.\n\n[1] http://www.w3schools.com/tags/tag_p.asp",
+      "parentUuid": "aaa213bd_2005ca26",
       "range": {
         "startLine": 65,
         "startChar": 37,
