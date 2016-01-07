@@ -20,6 +20,23 @@
     },
     {
       "key": {
+        "uuid": "aab8533e_3053a86a",
+        "filename": "lib/silk-icons/BUCK",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2016-01-07T09:46:32Z",
+      "side": 1,
+      "message": "This license is already defined in Gerrit core. Why should we repeat it here?",
+      "revId": "660e3a1f456e39727f9df00bb4899a9804494411",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aaa213bd_4008ce40",
         "filename": "lib/silk-icons/BUCK",
         "patchSetId": 6
@@ -67,6 +84,24 @@
       "side": 1,
       "message": "\u003e Is this library empty (no sources, recourses and dependencies) and\n \u003e can be removed?\n\nIt is empty (no source, no resources, no dependencies), but I have this BUCK file so that define_license above is executed.\n\n \u003e Or have you missed to add custom license?\n\nMaybe. How could I do this? The java_library rule doesn\u0027t accept a \u0027license\u0027 parameter.\n\n \u003e I\u0027m also not sure, what custom license actually does in  \n \u003e plugin context.\n\nI hope that is does the same as in Gerrit context.",
       "parentUuid": "aaa213bd_4008ce40",
+      "revId": "660e3a1f456e39727f9df00bb4899a9804494411",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eaaecbf8_525ab47b",
+        "filename": "lib/silk-icons/BUCK",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2016-01-07T09:46:32Z",
+      "side": 1,
+      "message": "\u003e It is empty (no source, no resources, no dependencies), but I have\n \u003e this BUCK file so that define_license above is executed.\n\nI think you are confusing rule declaration and rule invocation. By the fact that define_license() above are invoked:\n\n  def define_license(name):\n    n \u003d \u0027LICENSE-\u0027 + name\n    genrule(\n      name \u003d n,\n      cmd \u003d \u0027ln -s $SRCS $OUT\u0027,\n      srcs \u003d [n],\n      out \u003d n,\n      visibility \u003d [\u0027PUBLIC\u0027],\n    )\n\ntwo rules with the names: LICENSE-silk-icons, LICENSE-CC-BY3.0 are defined. However, because these rules are unused, (in Directed Acyclic Graph of all targets there is no edge to any of them), the are never invoked.\n\n \u003e \n \u003e \u003e Or have you missed to add custom license?\n \u003e \n \u003e Maybe. How could I do this? The java_library rule doesn\u0027t accept a\n \u003e \u0027license\u0027 parameter.\n\nlicense linking in Gerrit core is implemented by adding a dependency to them. What you would do in Gerrit core (see for example how it was done for codemirror prebuilt_binary):\n\n  java_library(\n    name \u003d \u0027silk_icons_lib\u0027,\n    deps \u003d [\n      \u0027:LICENSE-silk-icons\u0027,\n      \u0027:LICENSE-CC-BY3.0\u0027,\n    ],\n  [...]\n\nBut this rises the question, why to bother with \u0027silk_icons_lib\u0027 anyway? You could put these lines in root BUCK file:\n\n  define_license(\u0027silk-icons\u0027)\n  define_license(\u0027CC-BY3.0\u0027) \n\nAnd just add the dependencies to the plugin itself directly:\n\n  gerrit_plugin(\n    name \u003d \u0027emoticons\u0027,\n    [...]\n    deps \u003d [\n      \u0027:LICENSE-silk-icons\u0027,\n      \u0027:LICENSE-CC-BY3.0\u0027,\n    ],\n  )\n\nThis would imply, that the licenses itself are defined in the root directory of plugin. But do we care?\n\nAnother question (see my explanation below how license machinery works in Gerrit core), the fact that the licenses are included in the plugin, still doesn\u0027t mean that they are exposed in the UI, through index or documentation page. That was my original question why do we want to include the licenses in the plugin in the first place, without exposing them on the UI?\n\n \u003e \u003e I\u0027m also not sure, what custom license actually does in\n \u003e \u003e plugin context.\n \u003e \n \u003e I hope that is does the same as in Gerrit context.\n\nIn Gerrit core, licensing linking is implemented like this:\n\n* 1. License dependencies are added to java_library() (through custom maven_jar() rule for Central artifacts), prebuilt_binary() (for downloaded JARs artifacts) and genrule() (for Javascript polygerrit stuff)\n* 2. When release.war is built, gerrit/Documentation/gen_licenses.py is invoked, something like: buck query \"deps(//programs:buck + //programs:buckd)\" --output-attributes\u003dbuck.direct_dependencies\n\nand the output is traversed:\n\n    \"//third-party/java/maven:maven-aether-provider\" : {\n    \"buck.direct_dependencies\" : [ \"//third-party/java/aether:aether-api\", \"//third-party/java/aether:aether-impl\", \"//third-party/java/aether:aether-spi\", \"//third-party/java/aether:aether-util\", \"//third-party/java/guava:guava\", \"//third-party/java/guice:guice\", \"//third-party/java/maven:maven-model\", \"//third-party/java/maven:maven-model-builder\", \"//third-party/java/maven:maven-repository-metadata\", \"//third-party/java/plexus:plexus-component-annotations\", \"//third-party/java/plexus:plexus-utils\" ]\n  },\n\nand all LICENSE-foo dependencies are retrieved:\n\n    for dep in graph[target]:\n      if not dep.startswith(\u0027//lib:LICENSE-\u0027):\n        continue\n      if \u0027DO_NOT_DISTRIBUTE\u0027 in dep:\n        do_not_distribute \u003d True\n      licenses[dep].add(target)\n\nso that this file is rendered in the end: [1].\n\n* [1] https://gerrit-review.googlesource.com/Documentation/licenses.html\n\nIn the custom plugin build case all these steps are not invoked. All you could do for now is to depend transitively on your licenses, so that they are included in uber-jar plugin file.",
+      "parentUuid": "eaaecbf8_12014c4d",
       "revId": "660e3a1f456e39727f9df00bb4899a9804494411",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
