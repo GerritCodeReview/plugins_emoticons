@@ -1,4 +1,22 @@
 {
   "pushCert": "certificate version 0.1\npusher A0D0EF51 1453123438 +0100\nnonce ALmjDBV6hpA7MTA+Lrtjecn+DlShTXNhRsOSNLxlV2TnoFbOWl3cukn88FgnVssF53+4vOXUVgD9\n\n0000000000000000000000000000000000000000 6a5eb1e4500955113db95f577926a5c5cc22207a refs/for/master\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQEcBAABAgAGBQJWnOduAAoJEFG1/Zeg0O9R/w4IAKZDPCXdaQTPAcxfYYlK3vEJ\nZEeSkQpTUjIOSNv6Bfib0EmPEgivmQ6PQ58fzDWcQVUZQ5P+dqt8NZ76oQwqICWQ\nmoLj9zijhO5foIqa469xjJQtRhJJ0bGzXu33P0RDlOJJ2/EGaaEpavEabjBDddO2\n1yKIU4sNSVz5IfLBEqP8avRw1tHGp1texEY+vmhUo3RnRLW/g0q9Dr/yMAxyBRTK\nEaWa2BmdmGqJHO+tc8bFuTKomClA+2sbN7qavk2Qeu14gJ6ADStCxf8GLTt0zaGp\n2N8vCCY/N9ApVqfMGTYNlK3YV5dteSb4FOAM3l+KdxF9EjrAmhz/UkhYVDQhXDQ\u003d\n\u003dhR8C\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "272bbe19_5480ace2",
+        "filename": "BUCK",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2016-01-18T19:16:00Z",
+      "side": 1,
+      "message": "When you move LICENSE-* files under src/main/resources directory you could just say:\n\n  glob([\u0027src/main/**/*\u0027]),\n\nOr better to add this exclude:\n\n  glob([\u0027src/main/**/*\u0027], excludes \u003d [\u0027**/*.java\u0027])\n\nto skip *.java sources files from plugin JAR. Before:\n\n  $ jar -tf buck-out/gen/plugins/emoticons/emoticons.jar | grep java | wc -l\n  13\n\nAfter:\n\n  $ jar -tf buck-out/gen/plugins/emoticons/emoticons.jar | grep java | wc -l\n  0",
+      "revId": "6a5eb1e4500955113db95f577926a5c5cc22207a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
 }
