@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "67313682_96dbac12",
+        "filename": "lib/silk-icons/BUCK",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2016-01-18T11:50:53Z",
+      "side": 1,
+      "message": "Thanks for analyzing and explaining how the license generation works. I agree that in this case the silk-icons lib is not needed and I have removed it with the new patch set.\n\nWhat is important is that the license information is correctly shown in the plugin documentation. This is already the case by linking to the license text in the Gerrit core documentation. In addition the full license text must be part of the plugin jar since it may be distributed on its own. For this I copied LICENSE-silk_icons and LICENSE-CC-BY3.0 into the plugin root dir, but they not referenced by Buck and are only there for the legal reason.",
+      "parentUuid": "eaaecbf8_525ab47b",
+      "revId": "660e3a1f456e39727f9df00bb4899a9804494411",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aaa213bd_2005ca26",
         "filename": "src/main/resources/static/emoticons.js",
         "patchSetId": 6
