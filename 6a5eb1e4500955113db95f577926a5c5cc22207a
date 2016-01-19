@@ -17,6 +17,24 @@
       "revId": "6a5eb1e4500955113db95f577926a5c5cc22207a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6776964c_eeec7fe6",
+        "filename": "BUCK",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2016-01-19T09:20:51Z",
+      "side": 1,
+      "message": "Thanks for the suggestion!\n\nDone.",
+      "parentUuid": "272bbe19_5480ace2",
+      "revId": "6a5eb1e4500955113db95f577926a5c5cc22207a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
