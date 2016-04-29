@@ -18,16 +18,16 @@ Clone bucklets library:
   git clone https://gerrit.googlesource.com/bucklets
 
 ```
-and link it to reviewers plugin directory:
+and link it to @PLUGIN@ plugin directory:
 
 ```
-  cd reviewers && ln -s ../bucklets .
+  cd @PLUGIN@ && ln -s ../bucklets .
 ```
 
 Add link to the .buckversion file:
 
 ```
-  cd reviewers && ln -s bucklets/buckversion .buckversion
+  cd @PLUGIN@ && ln -s bucklets/buckversion .buckversion
 ```
 
 To build the plugin, issue the following command:
@@ -40,7 +40,7 @@ To build the plugin, issue the following command:
 The output is created in
 
 ```
-  buck-out/gen/imagare.jar
+  buck-out/gen/@PLUGIN@.jar
 ```
 
 Build in Gerrit tree
@@ -50,13 +50,13 @@ Clone or link this plugin to the plugins directory of Gerrit tree
 and issue the command:
 
 ```
-  buck build plugins/imagare
+  buck build plugins/@PLUGIN@
 ```
 
 The output is created in
 
 ```
-  buck-out/gen/plugins/imagare/imagare.jar
+  buck-out/gen/plugins/@PLUGIN@/@PLUGIN@.jar
 ```
 
 This project can be imported into the Eclipse IDE:
