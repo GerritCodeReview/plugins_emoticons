@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "880c85ef_b9b5dfe1",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2016-05-02T00:59:41Z",
+      "side": 1,
+      "message": "Replace all the hard-coded plugin names with `@PLUGIN@`?",
+      "range": {
+        "startLine": 21,
+        "startChar": 15,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "2bcfc12678f0e65aaafa980b06b2da1c6139dd0c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "480c4dc0_e7036265",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 1
