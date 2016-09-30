@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c246796b_63e36298",
+        "filename": "lib/gerrit/BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1012623
+      },
+      "writtenOn": "2016-09-30T05:26:22Z",
+      "side": 1,
+      "message": "It\u0027s gerrit master on 2.14 now?  Should this reference 2.14-SNAPSHOT instead?\n\nOtherwise would it make sense to create a stable-2.13 branch and point a version of this plugin that works with 2.13.x?",
+      "revId": "35175ddd761ccae1065050e3a10c550fbca0b36d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
