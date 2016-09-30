@@ -16,6 +16,24 @@
       "revId": "35175ddd761ccae1065050e3a10c550fbca0b36d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4290c909_5fe92ba4",
+        "filename": "lib/gerrit/BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2016-09-30T05:29:16Z",
+      "side": 1,
+      "message": "I\u0027ll create stable-2.13 from this commit after it\u0027s submitted.  Then the 2.14-SNAPSHOT update can be done on master.",
+      "parentUuid": "c246796b_63e36298",
+      "revId": "35175ddd761ccae1065050e3a10c550fbca0b36d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
