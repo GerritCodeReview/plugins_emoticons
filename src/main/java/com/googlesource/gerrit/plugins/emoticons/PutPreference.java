@@ -16,6 +16,7 @@ package com.googlesource.gerrit.plugins.emoticons;
 
 import static com.googlesource.gerrit.plugins.emoticons.GetPreference.KEY_SHOW_EMOTICONS;
 import static com.googlesource.gerrit.plugins.emoticons.GetPreference.PREFERENCE;
+import static com.google.gerrit.server.permissions.GlobalPermission.ADMINISTRATE_SERVER;
 
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.extensions.restapi.AuthException;
@@ -26,6 +27,7 @@ import com.google.gerrit.server.IdentifiedUser;
 import com.google.gerrit.server.account.AccountResource;
 import com.google.gerrit.server.git.MetaDataUpdate;
 import com.google.gerrit.server.git.ProjectLevelConfig;
+import com.google.gerrit.server.permissions.PermissionBackend;
 import com.google.gerrit.server.project.ProjectCache;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -42,16 +44,19 @@ public class PutPreference implements RestModifyView<AccountResource, Input> {
   private final ProjectCache projectCache;
   private final MetaDataUpdate.User metaDataUpdateFactory;
   private final String pluginName;
+  private final PermissionBackend permissionBackend;
 
   @Inject
   PutPreference(Provider<IdentifiedUser> self,
       ProjectCache projectCache,
       MetaDataUpdate.User metaDataUpdateFactory,
-      @PluginName String pluginName) {
+      @PluginName String pluginName,
+      PermissionBackend permissionBackend) {
     this.self = self;
     this.projectCache = projectCache;
     this.metaDataUpdateFactory = metaDataUpdateFactory;
     this.pluginName = pluginName;
+    this.permissionBackend = permissionBackend;
   }
 
   @Override
@@ -59,7 +64,7 @@ public class PutPreference implements RestModifyView<AccountResource, Input> {
       throws AuthException, RepositoryNotFoundException, IOException,
       UnprocessableEntityException {
     if (self.get() != rsrc.getUser()
-        && !self.get().getCapabilities().canAdministrateServer()) {
+        && !permissionBackend.user(user).testOrFalse(ADMINISTRATE_SERVER)) {
       throw new AuthException("not allowed to change preference");
     }
     if (input == null) {
