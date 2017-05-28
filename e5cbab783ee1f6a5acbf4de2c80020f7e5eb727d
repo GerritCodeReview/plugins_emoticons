@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd4daec1_27cf6cf6",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/GetPreference.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2017-05-28T07:18:11Z",
+      "side": 1,
+      "message": "Wrong import order.",
+      "revId": "e5cbab783ee1f6a5acbf4de2c80020f7e5eb727d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
