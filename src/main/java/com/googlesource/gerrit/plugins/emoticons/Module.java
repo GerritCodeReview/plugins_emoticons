@@ -23,14 +23,15 @@ import com.google.inject.AbstractModule;
 public class Module extends AbstractModule {
   @Override
   protected void configure() {
-    install(new RestApiModule() {
-      @Override
-      protected void configure() {
-        get(CONFIG_KIND, "config").to(GetConfig.class);
-        put(CONFIG_KIND, "config").to(PutConfig.class);
-        get(ACCOUNT_KIND, "preference").to(GetPreference.class);
-        put(ACCOUNT_KIND, "preference").to(PutPreference.class);
-      }
-    });
+    install(
+        new RestApiModule() {
+          @Override
+          protected void configure() {
+            get(CONFIG_KIND, "config").to(GetConfig.class);
+            put(CONFIG_KIND, "config").to(PutConfig.class);
+            get(ACCOUNT_KIND, "preference").to(GetPreference.class);
+            put(ACCOUNT_KIND, "preference").to(PutPreference.class);
+          }
+        });
   }
 }

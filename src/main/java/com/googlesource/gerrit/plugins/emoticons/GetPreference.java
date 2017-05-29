@@ -27,9 +27,7 @@ import com.google.gerrit.server.permissions.PermissionBackendException;
 import com.google.gerrit.server.project.ProjectCache;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-
 import com.googlesource.gerrit.plugins.emoticons.GetConfig.ConfigInfo;
-
 import org.eclipse.jgit.lib.Config;
 
 public class GetPreference implements RestReadView<AccountResource> {
@@ -43,7 +41,8 @@ public class GetPreference implements RestReadView<AccountResource> {
   private final PermissionBackend permissionBackend;
 
   @Inject
-  GetPreference(Provider<IdentifiedUser> self,
+  GetPreference(
+      Provider<IdentifiedUser> self,
       ProjectCache projectCache,
       @PluginName String pluginName,
       Provider<GetConfig> getConfig,
@@ -62,11 +61,13 @@ public class GetPreference implements RestReadView<AccountResource> {
     }
 
     ConfigInfo globalCfg = getConfig.get().apply(new ConfigResource());
-    Config db =
-        projectCache.getAllProjects().getConfig(pluginName + ".config").get();
+    Config db = projectCache.getAllProjects().getConfig(pluginName + ".config").get();
     ConfigInfo info = new ConfigInfo();
     info.showEmoticons =
-        db.getBoolean(PREFERENCE, self.get().getUserName(), KEY_SHOW_EMOTICONS,
+        db.getBoolean(
+            PREFERENCE,
+            self.get().getUserName(),
+            KEY_SHOW_EMOTICONS,
             (globalCfg.showEmoticons != null ? globalCfg.showEmoticons : true));
     if (!info.showEmoticons) {
       info.showEmoticons = null;

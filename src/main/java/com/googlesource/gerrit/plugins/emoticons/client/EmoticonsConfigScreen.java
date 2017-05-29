@@ -34,17 +34,18 @@ public abstract class EmoticonsConfigScreen extends VerticalPanel {
   protected EmoticonsConfigScreen(RestApi restApi) {
     this.restApi = restApi;
     setStyleName("emoticons-config-screen");
-    restApi.get(new AsyncCallback<ConfigInfo>() {
-        @Override
-        public void onSuccess(ConfigInfo info) {
-          display(info);
-        }
+    restApi.get(
+        new AsyncCallback<ConfigInfo>() {
+          @Override
+          public void onSuccess(ConfigInfo info) {
+            display(info);
+          }
 
-        @Override
-        public void onFailure(Throwable caught) {
-          // never invoked
-        }
-      });
+          @Override
+          public void onFailure(Throwable caught) {
+            // never invoked
+          }
+        });
   }
 
   protected void display(ConfigInfo info) {
@@ -63,12 +64,13 @@ public abstract class EmoticonsConfigScreen extends VerticalPanel {
 
     saveButton = new Button("Save");
     saveButton.setStyleName("emoticons-save-button");
-    saveButton.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(final ClickEvent event) {
-        doSave();
-      }
-    });
+    saveButton.addClickHandler(
+        new ClickHandler() {
+          @Override
+          public void onClick(final ClickEvent event) {
+            doSave();
+          }
+        });
     buttons.add(saveButton);
     saveButton.setEnabled(false);
     new OnEditEnabler(saveButton, showEmoticonsBox);
@@ -80,20 +82,21 @@ public abstract class EmoticonsConfigScreen extends VerticalPanel {
   private void doSave() {
     ConfigInfo in = ConfigInfo.create();
     in.setShowEmoticons(showEmoticonsBox.getValue());
-    restApi.put(in, new AsyncCallback<JavaScriptObject>() {
-        @Override
-        public void onSuccess(JavaScriptObject result) {
-          saveButton.setEnabled(false);
-          onSave();
-        }
+    restApi.put(
+        in,
+        new AsyncCallback<JavaScriptObject>() {
+          @Override
+          public void onSuccess(JavaScriptObject result) {
+            saveButton.setEnabled(false);
+            onSave();
+          }
 
-        @Override
-        public void onFailure(Throwable caught) {
-          // never invoked
-        }
-      });
+          @Override
+          public void onFailure(Throwable caught) {
+            // never invoked
+          }
+        });
   }
 
-  protected void onSave() {
-  }
+  protected void onSave() {}
 }

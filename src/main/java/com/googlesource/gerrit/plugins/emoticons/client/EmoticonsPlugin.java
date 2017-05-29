@@ -23,10 +23,11 @@ public class EmoticonsPlugin extends PluginEntryPoint {
 
   @Override
   public void onPluginLoad() {
-    Plugin.get().screen("settings",
-        new EmoticonsAdminScreen.Factory());
-    Plugin.get().settingsScreen("preferences",
-        Plugin.get().getName() + " Preferences",
-        new EmoticonsPreferenceScreen.Factory());
+    Plugin.get().screen("settings", new EmoticonsAdminScreen.Factory());
+    Plugin.get()
+        .settingsScreen(
+            "preferences",
+            Plugin.get().getName() + " Preferences",
+            new EmoticonsPreferenceScreen.Factory());
   }
 }
