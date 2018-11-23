@@ -57,7 +57,7 @@ public class GetPreference implements RestReadView<AccountResource> {
   @Override
   public ConfigInfo apply(AccountResource rsrc) throws AuthException, PermissionBackendException {
     if (self.get() != rsrc.getUser()) {
-      permissionBackend.user(self).check(ADMINISTRATE_SERVER);
+      permissionBackend.currentUser().check(ADMINISTRATE_SERVER);
     }
 
     ConfigInfo globalCfg = getConfig.get().apply(new ConfigResource());
@@ -66,7 +66,7 @@ public class GetPreference implements RestReadView<AccountResource> {
     info.showEmoticons =
         db.getBoolean(
             PREFERENCE,
-            self.get().getUserName(),
+            self.get().getUserName().orElse(null),
             KEY_SHOW_EMOTICONS,
             (globalCfg.showEmoticons != null ? globalCfg.showEmoticons : true));
     if (!info.showEmoticons) {
