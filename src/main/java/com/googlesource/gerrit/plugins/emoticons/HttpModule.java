@@ -25,5 +25,6 @@ public class HttpModule extends HttpPluginModule {
   protected void configureServlets() {
     DynamicSet.bind(binder(), WebUiPlugin.class).toInstance(new GwtPlugin("emoticons"));
     DynamicSet.bind(binder(), WebUiPlugin.class).toInstance(new JavaScriptPlugin("emoticons.js"));
+    DynamicSet.bind(binder(), WebUiPlugin.class).toInstance(new JavaScriptPlugin("emoticons.html"));
   }
 }

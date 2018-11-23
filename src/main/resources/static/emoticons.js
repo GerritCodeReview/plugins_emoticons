@@ -18,7 +18,7 @@ Gerrit.install(function(self) {
       if (prefs !== null) {
         insertEmoticons(e, prefs)
       } else {
-        Gerrit.get('/accounts/self/' + self.getPluginName()
+        self.get('/accounts/self/' + self.getPluginName()
             + '~preference', function(prefs) {
           storePrefsInCookie(prefs);
           insertEmoticons(e, prefs)
@@ -97,5 +97,5 @@ Gerrit.install(function(self) {
       });
     }
 
-    Gerrit.on('comment', onComment);
+    self.on('comment', onComment);
   });
