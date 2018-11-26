@@ -46,6 +46,30 @@
       "revId": "e9d59d3f0b2dce50b2249d75c4f3bcaccbb0a9b4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f672a0c8_a96c08c0",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/emoticons/HttpModule.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017568
+      },
+      "writtenOn": "2018-11-26T13:39:22Z",
+      "side": 1,
+      "message": "Was missing from the commit, it\u0027s now fixed.",
+      "parentUuid": "a5c4dce5_449a9843",
+      "range": {
+        "startLine": 28,
+        "startChar": 82,
+        "endLine": 28,
+        "endChar": 96
+      },
+      "revId": "e9d59d3f0b2dce50b2249d75c4f3bcaccbb0a9b4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
