@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "24e3de1a_d98b111c",
+        "filename": "src/main/resources/static/emoticons.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2018-11-26T13:45:03Z",
+      "side": 1,
+      "message": "2018",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "b6754fadef6bdbcc15d182f51f370863b79d5140",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d32fae7_6a4cedbc",
+        "filename": "src/main/resources/static/emoticons.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2018-11-26T13:45:03Z",
+      "side": 1,
+      "message": "nit: Should be \"emoticon.js\", or optionally remove the whole comment block.",
+      "range": {
+        "startLine": 18,
+        "startChar": 43,
+        "endLine": 18,
+        "endChar": 58
+      },
+      "revId": "b6754fadef6bdbcc15d182f51f370863b79d5140",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da262d9e_63ff5764",
+        "filename": "src/main/resources/static/emoticons.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2018-11-26T13:45:03Z",
+      "side": 1,
+      "message": "nit: emoticon.js",
+      "range": {
+        "startLine": 29,
+        "startChar": 44,
+        "endLine": 29,
+        "endChar": 59
+      },
+      "revId": "b6754fadef6bdbcc15d182f51f370863b79d5140",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
