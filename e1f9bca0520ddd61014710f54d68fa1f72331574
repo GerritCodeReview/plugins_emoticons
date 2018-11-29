@@ -81,6 +81,30 @@
       "revId": "e1f9bca0520ddd61014710f54d68fa1f72331574",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9684b6f_4410eb79",
+        "filename": "tools/eclipse/BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-11-29T02:21:25Z",
+      "side": 1,
+      "message": "But buildifier 0.17.2 also wouldn\u0027t change the order if you put them in lexicographically sorted order, because a reviewer telling you, that these lines are not sorted.",
+      "parentUuid": "bdb398c6_700e9d46",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 56
+      },
+      "revId": "e1f9bca0520ddd61014710f54d68fa1f72331574",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
