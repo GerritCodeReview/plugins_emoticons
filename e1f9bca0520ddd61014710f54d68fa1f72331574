@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d48c8c78_f8d9e475",
+        "filename": "tools/bzl/BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-11-29T01:34:11Z",
+      "side": 1,
+      "message": "Nit: Add a comment.",
+      "revId": "e1f9bca0520ddd61014710f54d68fa1f72331574",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "539061fb_19188d36",
+        "filename": "tools/eclipse/BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-11-29T01:34:11Z",
+      "side": 1,
+      "message": "Swap the loading order to be lexicographically sorted.",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 56
+      },
+      "revId": "e1f9bca0520ddd61014710f54d68fa1f72331574",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
