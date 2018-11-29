@@ -105,6 +105,30 @@
       "revId": "e1f9bca0520ddd61014710f54d68fa1f72331574",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96ffd27d_903ef59b",
+        "filename": "tools/eclipse/BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2018-11-29T02:30:21Z",
+      "side": 1,
+      "message": "That\u0027s the point.  I\u0027d rather wait until we have buildifier 0.29.2, which *will* do that, and then do all the plugins in one shot automated by a script.",
+      "parentUuid": "e9684b6f_4410eb79",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 56
+      },
+      "revId": "e1f9bca0520ddd61014710f54d68fa1f72331574",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
