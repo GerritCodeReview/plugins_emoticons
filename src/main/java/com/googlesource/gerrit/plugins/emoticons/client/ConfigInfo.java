@@ -26,6 +26,5 @@ public class ConfigInfo extends JavaScriptObject {
     return g;
   }
 
-  protected ConfigInfo() {
-  }
+  protected ConfigInfo() {}
 }

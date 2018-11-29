@@ -23,9 +23,7 @@ import com.google.gerrit.server.config.ConfigResource;
 import com.google.gerrit.server.project.ProjectCache;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-
 import com.googlesource.gerrit.plugins.emoticons.GetConfig.ConfigInfo;
-
 import org.eclipse.jgit.lib.Config;
 
 public class GetPreference implements RestReadView<AccountResource> {
@@ -38,7 +36,8 @@ public class GetPreference implements RestReadView<AccountResource> {
   private final Provider<GetConfig> getConfig;
 
   @Inject
-  GetPreference(Provider<IdentifiedUser> self,
+  GetPreference(
+      Provider<IdentifiedUser> self,
       ProjectCache projectCache,
       @PluginName String pluginName,
       Provider<GetConfig> getConfig) {
@@ -50,17 +49,18 @@ public class GetPreference implements RestReadView<AccountResource> {
 
   @Override
   public ConfigInfo apply(AccountResource rsrc) throws AuthException {
-    if (self.get() != rsrc.getUser()
-        && !self.get().getCapabilities().canAdministrateServer()) {
+    if (self.get() != rsrc.getUser() && !self.get().getCapabilities().canAdministrateServer()) {
       throw new AuthException("not allowed to get preference");
     }
 
     ConfigInfo globalCfg = getConfig.get().apply(new ConfigResource());
-    Config db =
-        projectCache.getAllProjects().getConfig(pluginName + ".config").get();
+    Config db = projectCache.getAllProjects().getConfig(pluginName + ".config").get();
     ConfigInfo info = new ConfigInfo();
     info.showEmoticons =
-        db.getBoolean(PREFERENCE, self.get().getUserName(), KEY_SHOW_EMOTICONS,
+        db.getBoolean(
+            PREFERENCE,
+            self.get().getUserName(),
+            KEY_SHOW_EMOTICONS,
             (globalCfg.showEmoticons != null ? globalCfg.showEmoticons : true));
     if (!info.showEmoticons) {
       info.showEmoticons = null;

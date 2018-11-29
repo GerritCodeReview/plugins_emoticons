@@ -29,7 +29,6 @@ public class EmoticonsAdminScreen extends EmoticonsConfigScreen {
   }
 
   EmoticonsAdminScreen() {
-    super(new RestApi("config").id("server").view(
-            Plugin.get().getPluginName(), "config"));
+    super(new RestApi("config").id("server").view(Plugin.get().getPluginName(), "config"));
   }
 }

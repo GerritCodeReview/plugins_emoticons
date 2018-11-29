@@ -25,17 +25,14 @@ import com.google.gerrit.server.config.ConfigResource;
 import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.gerrit.server.config.SitePaths;
 import com.google.inject.Inject;
-
 import com.googlesource.gerrit.plugins.emoticons.PutConfig.Input;
-
+import java.io.IOException;
 import org.eclipse.jgit.errors.ConfigInvalidException;
 import org.eclipse.jgit.storage.file.FileBasedConfig;
 import org.eclipse.jgit.util.FS;
 
-import java.io.IOException;
-
 @RequiresCapability(value = GlobalCapability.ADMINISTRATE_SERVER, scope = CapabilityScope.CORE)
-public class PutConfig implements RestModifyView<ConfigResource, Input>{
+public class PutConfig implements RestModifyView<ConfigResource, Input> {
   public static class Input {
     public Boolean showEmoticons;
   }
@@ -45,9 +42,7 @@ public class PutConfig implements RestModifyView<ConfigResource, Input>{
   private final String pluginName;
 
   @Inject
-  PutConfig(PluginConfigFactory cfgFactory,
-      SitePaths sitePaths,
-      @PluginName String pluginName) {
+  PutConfig(PluginConfigFactory cfgFactory, SitePaths sitePaths, @PluginName String pluginName) {
     this.cfgFactory = cfgFactory;
     this.sitePaths = sitePaths;
     this.pluginName = pluginName;
@@ -59,8 +54,7 @@ public class PutConfig implements RestModifyView<ConfigResource, Input>{
     if (input == null) {
       input = new Input();
     }
-    FileBasedConfig cfg =
-        new FileBasedConfig(sitePaths.gerrit_config.toFile(), FS.DETECTED);
+    FileBasedConfig cfg = new FileBasedConfig(sitePaths.gerrit_config.toFile(), FS.DETECTED);
     cfg.load();
 
     if (input.showEmoticons != null) {

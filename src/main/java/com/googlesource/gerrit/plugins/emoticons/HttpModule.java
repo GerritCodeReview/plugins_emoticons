@@ -23,9 +23,7 @@ import com.google.gerrit.httpd.plugins.HttpPluginModule;
 public class HttpModule extends HttpPluginModule {
   @Override
   protected void configureServlets() {
-    DynamicSet.bind(binder(), WebUiPlugin.class)
-        .toInstance(new GwtPlugin("emoticons"));
-    DynamicSet.bind(binder(), WebUiPlugin.class)
-        .toInstance(new JavaScriptPlugin("emoticons.js"));
+    DynamicSet.bind(binder(), WebUiPlugin.class).toInstance(new GwtPlugin("emoticons"));
+    DynamicSet.bind(binder(), WebUiPlugin.class).toInstance(new JavaScriptPlugin("emoticons.js"));
   }
 }

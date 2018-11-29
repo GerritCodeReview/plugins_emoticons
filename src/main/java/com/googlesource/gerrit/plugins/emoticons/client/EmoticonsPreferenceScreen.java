@@ -30,8 +30,7 @@ public class EmoticonsPreferenceScreen extends EmoticonsConfigScreen {
   }
 
   EmoticonsPreferenceScreen() {
-    super(new RestApi("accounts").id("self").view(
-            Plugin.get().getPluginName(), "preference"));
+    super(new RestApi("accounts").id("self").view(Plugin.get().getPluginName(), "preference"));
   }
 
   @Override

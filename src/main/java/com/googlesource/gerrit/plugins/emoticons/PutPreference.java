@@ -29,13 +29,10 @@ import com.google.gerrit.server.git.ProjectLevelConfig;
 import com.google.gerrit.server.project.ProjectCache;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-
 import com.googlesource.gerrit.plugins.emoticons.PutConfig.Input;
-
+import java.io.IOException;
 import org.eclipse.jgit.errors.RepositoryNotFoundException;
 import org.eclipse.jgit.lib.Config;
-
-import java.io.IOException;
 
 public class PutPreference implements RestModifyView<AccountResource, Input> {
   private final Provider<IdentifiedUser> self;
@@ -44,7 +41,8 @@ public class PutPreference implements RestModifyView<AccountResource, Input> {
   private final String pluginName;
 
   @Inject
-  PutPreference(Provider<IdentifiedUser> self,
+  PutPreference(
+      Provider<IdentifiedUser> self,
       ProjectCache projectCache,
       MetaDataUpdate.User metaDataUpdateFactory,
       @PluginName String pluginName) {
@@ -56,10 +54,8 @@ public class PutPreference implements RestModifyView<AccountResource, Input> {
 
   @Override
   public Response<String> apply(AccountResource rsrc, Input input)
-      throws AuthException, RepositoryNotFoundException, IOException,
-      UnprocessableEntityException {
-    if (self.get() != rsrc.getUser()
-        && !self.get().getCapabilities().canAdministrateServer()) {
+      throws AuthException, RepositoryNotFoundException, IOException, UnprocessableEntityException {
+    if (self.get() != rsrc.getUser() && !self.get().getCapabilities().canAdministrateServer()) {
       throw new AuthException("not allowed to change preference");
     }
     if (input == null) {
@@ -68,13 +64,11 @@ public class PutPreference implements RestModifyView<AccountResource, Input> {
 
     String username = self.get().getUserName();
 
-    ProjectLevelConfig storage =
-        projectCache.getAllProjects().getConfig(pluginName + ".config");
+    ProjectLevelConfig storage = projectCache.getAllProjects().getConfig(pluginName + ".config");
     Config db = storage.get();
     boolean modified = false;
 
-    boolean showEmoticons =
-        db.getBoolean(PREFERENCE, username, KEY_SHOW_EMOTICONS, true);
+    boolean showEmoticons = db.getBoolean(PREFERENCE, username, KEY_SHOW_EMOTICONS, true);
     if (input.showEmoticons != null) {
       if (input.showEmoticons != showEmoticons) {
         db.setBoolean(PREFERENCE, username, KEY_SHOW_EMOTICONS, input.showEmoticons);
@@ -88,13 +82,12 @@ public class PutPreference implements RestModifyView<AccountResource, Input> {
     }
 
     if (modified) {
-      MetaDataUpdate md = metaDataUpdateFactory.create(
-          projectCache.getAllProjects().getProject().getNameKey());
-      md.setMessage("Update " + pluginName + " Preferences for '"
-          + username + "'\n");
+      MetaDataUpdate md =
+          metaDataUpdateFactory.create(projectCache.getAllProjects().getProject().getNameKey());
+      md.setMessage("Update " + pluginName + " Preferences for '" + username + "'\n");
       storage.commit(md);
     }
 
-    return Response.<String> ok("OK");
+    return Response.<String>ok("OK");
   }
 }
