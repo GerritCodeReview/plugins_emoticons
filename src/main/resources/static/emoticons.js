@@ -13,12 +13,20 @@
 // limitations under the License.
 
 Gerrit.install(function(self) {
+
+    function get(url, callback) {
+      if (window.Polymer)
+        self.restApi().get(url).then(callback)
+      else
+        Gerrit.get(url, callback)
+    }
+
     function onComment(e) {
       var prefs = getPrefsFromCookie();
       if (prefs !== null) {
         insertEmoticons(e, prefs)
       } else {
-        self.get('/accounts/self/' + self.getPluginName()
+        get('/accounts/self/' + self.getPluginName()
             + '~preference', function(prefs) {
           storePrefsInCookie(prefs);
           insertEmoticons(e, prefs)
