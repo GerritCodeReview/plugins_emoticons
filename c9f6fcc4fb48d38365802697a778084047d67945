@@ -16,6 +16,24 @@
       "revId": "c9f6fcc4fb48d38365802697a778084047d67945",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd5aa9d7_a4046b8b",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1083195
+      },
+      "writtenOn": "2020-01-28T19:52:08Z",
+      "side": 1,
+      "message": "Not by mistake. It had empty line after the text, but I added the this footer like how I did it with other plugins. They don\u0027t have empty line after the footer.",
+      "parentUuid": "9df5a4ce_33614270",
+      "revId": "c9f6fcc4fb48d38365802697a778084047d67945",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
